@@ -10,6 +10,7 @@ const Blog = ({ blog, handleAddBookmarks, handleMarkAsRead }) => {
     author_img,
     posted_date,
     hashtags,
+    id,
   } = blog;
   return (
     <div className="mb-20 space-y-4">
@@ -42,7 +43,7 @@ const Blog = ({ blog, handleAddBookmarks, handleMarkAsRead }) => {
       <button
         className="font-bold text-purple-600 underline"
         onClick={() => {
-          handleMarkAsRead(reading_time);
+          handleMarkAsRead(id, reading_time);
         }}
       >
         Mark As Read
@@ -55,6 +56,7 @@ Blog.propTypes = {
   blog: PropTypes.object.isRequired,
   handleAddBookmarks: PropTypes.func.isRequired,
   handleMarkAsRead: PropTypes.func.isRequired,
+  id: PropTypes.number,
 };
 
 export default Blog;
